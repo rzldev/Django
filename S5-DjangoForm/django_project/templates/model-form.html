@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Django App</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/model-form.css' %}"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <h1>This is Model Form Page</h1>
+      <h3>Please fill out this user form!</h3>
+      <form class="form__modelForm" method="POST">
+        {% csrf_token %}
+        <div class="modelForm__errors">{{ form.non_field_errors }}</div>
+        {% for field in form %}
+        <div class="modelForm__control">
+          {{ field.errors }} {{ field.label_tag }} {{ field }}
+        </div>
+        {% endfor %}
+        <input class="modelForm__button" type="submit" value="Submit" />
+      </form>
+    </div>
+  </body>
+</html>

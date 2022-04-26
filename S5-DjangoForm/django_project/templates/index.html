@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Django App</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/index.css' %}"
+    />
+  </head>
+  <body>
+    {% if user %}
+    <h1>Hello {{ user.username }}, welcome to Django App</h1>
+    {% else %}
+    <h1>Hello welcome to Django App</h1>
+    {% endif %}
+    <span>Routes:<span>
+        <ul class="routeList">
+            <li><a href="basic-form/">Basic Form</a></li>
+            <li><a href="model-form/">Model Form</a></li>
+        </ul>
+  </body>
+</html>
