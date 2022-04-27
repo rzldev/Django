@@ -1,0 +1,10 @@
+{% extends 'base.html' %} {% load staticfiles %} {% block body_block %}
+<div class="home">
+  {% if user.is_authenticated %}
+  <h1>Welcome {{ user.username }}</h1>
+  {% else %}
+  <h1>This is Home Page of Django App</h1>
+  {% endif %}
+</div>
+<link rel="stylesheet" href="{% static 'css/index.css' %}" />
+{% endblock body_block %}
