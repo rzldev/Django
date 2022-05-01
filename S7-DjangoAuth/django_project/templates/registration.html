@@ -1,0 +1,25 @@
+{% extends 'base.html' %} {% load staticfiles %} {% block body_block %}
+<div class="registration">
+  <h1>This is Register Page of Django App</h1>
+  <form
+    method="POST"
+    enctype="multipart/form-data"
+    class="register__form"
+    action="{% url 'django_app:register' %}"
+  >
+    {% csrf_token %} {% for field in user_form %}
+    <div class="form__formControl">
+      {{ field.errors }} {{ field.label_tag }} {{ field }}
+    </div>
+    {% endfor %} {% for field in user_profile_form %}
+    <div class="form__formControl">
+      {{ field.errors }} {{ field.label_tag }} {{ field }}
+    </div>
+    {% endfor %}
+    <div class="form__buttonControl">
+      <input type="submit" value="Submit" />
+    </div>
+  </form>
+</div>
+<link rel="stylesheet" href="{% static 'css/registration.css' %}" />
+{% endblock body_block %}

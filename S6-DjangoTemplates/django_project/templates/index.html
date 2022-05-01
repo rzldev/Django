@@ -1,0 +1,6 @@
+<!DOCTYPE html>
+{% extends 'base.html' %} {% load staticfiles %} {% block body_block %}
+<h1>Hello welcome to Django App</h1>
+<h3>{{ text|cut:"Hel"|upper }}</h3>
+<h3>{{ number|add:'1' }}</h3>
+{% endblock body_block %}

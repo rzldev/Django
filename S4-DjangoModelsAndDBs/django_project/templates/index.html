@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Django App</title>
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="{% static 'css/index.css' %}"
+    />
+  </head>
+  <body>
+    <h1>Hello welcome to Django App</h1>
+    {{ message }}
+
+    <div>
+      <h3>This is a picture of Django</h3>
+      <img
+        class="django__img"
+        src="{% static 'images/django-logo.png' %}"
+        alt="django-logo"
+      />
+    </div>
+
+    <div>
+      <h3>Here are your access records:</h3>
+      {% if access_records %}
+      <table class="records">
+        <thead>
+          <tr>
+            <th>Site Name</th>
+            <th>Date Accessed</th>
+          </tr>
+        </thead>
+        <tbody>
+          {% for record in access_records %}
+          <tr>
+            <td>{{ record.name }}</td>
+            <td>{{ record.date }}</td>
+          </tr>
+          {% endfor %}
+        </tbody>
+      </table>
+      {% else %}
+      <p>NO ACCESS RECORDS FOUND!</p>
+      {% endif %}
+    </div>
+  </body>
+</html>

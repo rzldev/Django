@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Django App</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+  </head>
+  <body>
+    <nav class="navbar">
+      <a href="{% url 'django_app:index' %}" class="nav__navLogo">
+        <img src="{% static 'images/django-logo.png' %}" alt="django-logo" />
+      </a>
+      <ul class="nav__navList">
+        <li class="nav__navItem">
+          <a href="{% url 'admin:index' %}">Admin</a>
+        </li>
+        <li class="nav__navItem">
+          <a href="{% url 'django_app:help' %}">Help</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container">{% block body_block %} {% endblock %}</div>
+  </body>
+</html>

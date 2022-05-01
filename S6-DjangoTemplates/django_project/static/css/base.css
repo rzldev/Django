@@ -1,0 +1,41 @@
+body {
+    margin: 0;
+}
+
+.navbar {
+  padding: 8px 20px;
+  display: flex;
+  align-items: center;
+  background-color: #e0f2f1;
+}
+
+.nav__navLogo {
+  height: 40px;
+  width: 80px;
+}
+
+.nav__navLogo > img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.nav__navList {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-left: auto;
+}
+
+.nav__navItem > a {
+  font-size: 1.25rem;
+  color: #133b2e;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.container {
+  margin: 20px;
+}

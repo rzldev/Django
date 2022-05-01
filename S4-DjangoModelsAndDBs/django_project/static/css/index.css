@@ -1,0 +1,11 @@
+.django__img {
+    width: 40%;
+}
+
+.records {
+    border: 2px solid black;
+}
+
+.records th, td {
+    border: 2px solid black;
+}

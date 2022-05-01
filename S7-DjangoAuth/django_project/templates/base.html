@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}" />
+  </head>
+  <body>
+    <header class="base__header">
+      <nav class="base__nav container">
+        <a class="nav__navLogo" href="{% url 'django_app:index' %}">
+          <img src="{% static 'images/django-logo.png' %}" alt="django logo" />
+        </a>
+        <ul class="nav__navList">
+          <li class="nav__navItem">
+            <a href="{% url 'django_app:register' %}">Register</a>
+          </li>
+
+          {% if user.is_authenticated %}
+          <li class="nav__navItem">
+            <a href="{% url 'django_app:logout' %}">Logout</a>
+          </li>
+          {% else %}
+          <li class="nav__navItem">
+            <a href="{% url 'django_app:login' %}">Login</a>
+          </li>
+          {% endif %}
+        </ul>
+      </nav>
+    </header>
+
+    <div class="base__body container">
+      {% block body_block %} {% endblock body_block %}
+    </div>
+  </body>
+</html>
